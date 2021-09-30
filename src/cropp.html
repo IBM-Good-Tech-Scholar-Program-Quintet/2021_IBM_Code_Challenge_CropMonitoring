@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="refresh" content="30">
+<title>Quintet</title>
+<style>
+  body{
+    background-image: url('crop3.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  button.homepage{
+  margin: 0;
+  position: absolute;
+  background-color:#009578 ; 
+  color: white; 
+  border: 4px solid #009578;
+    top: 10%;
+    left: 90%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+     }
+     h3.moisture{
+      margin:0;
+      position:absolute;
+      top:10%;
+      left:30%;
+     }
+     h3.temperature{
+      margin:0;
+      position:absolute;
+      top:30%;
+      left:35%;
+     }
+     h3.humidity{
+      margin:0;
+      position:absolute;
+      top:52%;
+      left:40%;
+     }
+  button.water{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;  
+  cursor: pointer;
+  border-radius: 12px;
+  position:absolute;
+  top: 80%;
+  left: 40%;
+  }
+  button.wateroff{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;  
+  cursor: pointer;
+  border-radius: 12px;
+  position:absolute;
+  top: 80%;
+  left: 50%;
+  }
+
+  .gauge {
+  top:50%;
+  left:20%;
+  width: 100%;
+  max-width: 250px;
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+  color: #004033;
+  }
+
+.gauge__body {
+  top:50%;
+      left:20%;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  background: #b4c0be;
+  position: relative;
+  border-top-left-radius: 100% 200%;
+  border-top-right-radius: 100% 200%;
+  overflow: hidden;
+}
+
+.gauge__fill {
+  top:50%;
+      left:20%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: inherit;
+  height: 100%;
+  background: #009578;
+  transform-origin: center top;
+  transform: rotate(0.25turn);
+  transition: transform 0.2s ease-out;
+}
+
+.gauge__cover {
+  top:50%;
+      left:20%;
+  width: 75%;
+  height: 150%;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25%;
+  box-sizing: border-box;
+}
+.gauge_temp{
+  top:50%;
+  left:50%;
+  width: 100%;
+  max-width: 250px;
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+  color: #004033;
+  }
+.gauge__body_temp {
+  top:50%;
+  left:50%;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  background: #b4c0be;
+  position: relative;
+  border-top-left-radius: 100% 200%;
+  border-top-right-radius: 100% 200%;
+  overflow: hidden;
+}
+
+.gauge__fill_temp {
+  top:50%;
+      left:50%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: inherit;
+  height: 100%;
+  background: #009578;
+  transform-origin: center top;
+  transform: rotate(0.25turn);
+  transition: transform 0.2s ease-out;
+}
+
+.gauge__cover_temp{
+  
+  width: 75%;
+  height: 150%;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25%;
+  box-sizing: border-box;
+}
+.gauge_hum{
+  top:50%;
+  left:80%;
+  width: 100%;
+  max-width: 250px;
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+  color: #004033;
+  }
+.gauge__body_hum {
+  top:50%;
+  left:80%;
+  width: 100%;
+  height: 0;
+  padding-bottom: 50%;
+  background: #b4c0be;
+  position: relative;
+  border-top-left-radius: 100% 200%;
+  border-top-right-radius: 100% 200%;
+  overflow: hidden;
+}
+
+.gauge__fill_hum {
+  top:50%;
+      left:80%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: inherit;
+  height: 100%;
+  background: #009578;
+  transform-origin: center top;
+  transform: rotate(0.25turn);
+  transition: transform 0.2s ease-out;
+}
+.gauge__cover_hum{
+  top:50%;
+      left:80%;
+  width: 75%;
+  height: 150%;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25%;
+  box-sizing: border-box;
+}
+#Moistureread{
+  color: #009933;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  font-weight: bolder;
+}
+
+</style>
+</head>
+<body>
+  <button class="homepage"><a href="crop.html">Back</a></button>
+  <div class="gauge">
+  <div class="gauge__body">
+    <div class="gauge__fill"></div>
+    <div class="gauge__cover"></div>
+  </div>
+</div>
+<h3 class="moisture">Moisture</h3>
+<h1 id="Moistureread">Crop is Healthy!!!</h1>
+
+<div class="gauge_temp">
+  <div class="gauge__body_temp">
+    <div class="gauge__fill_temp"></div>
+    <div class="gauge__cover_temp"></div>
+  </div>
+</div>
+<h3 class="temperature">Temperature</h3>
+
+<div class="gauge_hum">
+  <div class="gauge__body_hum">
+    <div class="gauge__fill_hum"></div>
+    <div class="gauge__cover_hum"></div>
+  </div>
+</div>
+<h3 class="humidity">Humidity</h3>
+
+<button class="water" onclick="display()">On</button>
+<button class="wateroff" onclick="dis()">OFF</button>
+  
+  <script type="text/javascript">
+    const gaugeElement = document.querySelector(".gauge");
+
+function setGaugeValue(gauge, value) {
+  if(value<0.1){
+    document.getElementById("Moistureread").innerHTML = "Crop needs water!!!";
+  }
+  if (value < 0 || value > 1) {
+    return;
+  }
+
+  gauge.querySelector(".gauge__fill").style.transform = `rotate(${
+    value / 2
+  }turn)`;
+  gauge.querySelector(".gauge__cover").textContent = `${Math.round(
+    value * 100
+  )}%`;
+  // if(textContent<=0.1) alert("Water your plants");
+  // else alert("Crop is healthy!!!");
+}
+const moist=Math.random();
+setGaugeValue(gaugeElement,moist);
+
+const gaugeElementtemp = document.querySelector(".gauge_temp");
+function setGaugeValuetemp(gauge, value) {
+  if (value < 0 || value > 1) {
+    return;
+  }
+
+  gauge.querySelector(".gauge__fill_temp").style.transform = `rotate(${
+    value / 2
+  }turn)`;
+  gauge.querySelector(".gauge__cover_temp").textContent = `${Math.round(
+    value * 100
+  )}`;
+}
+
+setGaugeValuetemp(gaugeElementtemp,Math.random());
+
+const gaugeElementhum = document.querySelector(".gauge_hum");
+function setGaugeValuehum(gauge, value) {
+  if (value < 0 || value > 1) {
+    return;
+  }
+
+  gauge.querySelector(".gauge__fill_hum").style.transform = `rotate(${
+    value / 2
+  }turn)`;
+  gauge.querySelector(".gauge__cover_hum").textContent = `${Math.round(
+    value * 100
+  )}%`;
+ }
+
+setGaugeValuehum(gaugeElementhum,Math.random());
+
+function display(){
+  document.getElementById("Moistureread").innerHTML="Watering Plants!";
+}
+function dis(){
+  document.getElementById("Moistureread").innerHTML="Watering Stopped!";
+} 
+
+function autoRefresh() {
+        window.location = window.location.href;
+    }
+    setInterval('autoRefresh()', 5000);  
+  </script>
+
+</body>
+</html>
