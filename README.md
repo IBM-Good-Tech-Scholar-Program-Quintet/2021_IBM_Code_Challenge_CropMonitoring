@@ -17,7 +17,7 @@
 
 4. Architecture:<br>
 
-<img src="https://drive.google.com/file/d/1K-lTQmsrG_azRL3sKAARxD5yYUNBROnY/view?usp=sharing">
+
 
 <br><br>
 5.Componenets used in our System:<br>
@@ -65,7 +65,7 @@
 			<td>Breadboard</td>
 			<td>Platform to connect jumper wires</td>
 		</tr>
-	</table>
+	
         <br><br>
 	<table border="1px">
 		<caption>Softaware Components</caption>
