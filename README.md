@@ -66,7 +66,6 @@
 			<td>Platform to connect jumper wires</td>
 		</tr>
 	</table>
-	
         <br><br>
 	<table border="1px">
 		<caption>Softaware Components</caption>
