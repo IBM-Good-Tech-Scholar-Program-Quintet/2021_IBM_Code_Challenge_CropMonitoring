@@ -15,12 +15,12 @@
   iii.They will get to know about the various features like moisture content,humidity as well as temperature level present across their crops.<br>
 <br><br>
 
-4. Architecture:<br>
+
 
 
 
 <br><br>
-5.Componenets used in our System:<br>
+4.Componenets used in our System:<br>
 <!DOCTYPE html>
 <html>
 <head>
